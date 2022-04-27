@@ -10,5 +10,7 @@ class BitFlip : public Mutator {
     int elementChanged(Individual *ind, int k);
     protected:
     int flipNo;
+    Individual *ind_;
+    int k;
 };
 #endif

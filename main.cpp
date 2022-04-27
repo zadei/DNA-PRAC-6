@@ -36,9 +36,9 @@ int main() {
     std::cout << ind->getLength() << std::endl;
     std::cout << indPopulated->getLength() << "\n" << std::endl;
  
-    std::cout << "This will test the BitFlip class" << std::endl;
+    // test flipbit
     doFlip->mutate(ind,13);
-    std::cout << "This changed the " << doFlip->elementChanged(ind,13) << " bit" << std::endl;
+    std::cout << "FlipBit changed bit " << doFlip->elementChanged(ind,13) << "!" << std::endl;
 
     
 

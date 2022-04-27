@@ -6,26 +6,26 @@
 //BitFlip::BitFlip() {}
 
 void BitFlip::mutate(Individual *ind, int k) {
-    this->ind = ind;
-    this->k = k;
-    int length = ind->getLength();
-
-    while(k<length) {
-        k = k - length;
-    }
-
-    ind->flipBit(k);
-}
-
-int BitFlip::elementChanged(Individual *ind, int k) {
-    this->ind = ind;
+    ind_ = ind;
     flipNo = k;
     int length = ind->getLength();
 
-    while(k<length) {
-        k = k - length;
+    while(flipNo>=length) {
+        flipNo = flipNo - length;
     }
 
-    return k;
+    ind->flipBit(flipNo);
+}
+
+int BitFlip::elementChanged(Individual *ind, int k) {
+    ind_ = ind;
+    flipNo = k;
+    int length = ind->getLength();
+
+    while(flipNo>=length) {
+        flipNo = flipNo - length;
+    }
+    
+    return flipNo;
 }
 

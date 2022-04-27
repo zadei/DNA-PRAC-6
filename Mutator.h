@@ -8,8 +8,6 @@ class Mutator {
     public:
     virtual void mutate(Individual *ind, int k) = 0;
     protected:
-    Individual *ind;
-    int k;
     
 };
 #endif
