@@ -8,6 +8,7 @@
 int main() {
     Individual *ind = new Individual(7);
     Individual *indPopulated = new Individual("101010101");
+    BitFlip *doFlip = new BitFlip();
 
     std::cout << "This should return both Individuals" << std::endl;
     std::cout << ind->getString() << std::endl;
@@ -36,7 +37,9 @@ int main() {
     std::cout << indPopulated->getLength() << "\n" << std::endl;
  
     std::cout << "This will test the BitFlip class" << std::endl;
-    std::cout <<  << std::endl;
+    doFlip->mutate(ind,13);
+    std::cout << "This changed the " << doFlip->elementChanged(ind,13) << " bit" << std::endl;
+
     
 
     return 0;

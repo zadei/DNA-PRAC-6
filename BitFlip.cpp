@@ -2,7 +2,10 @@
 #include "BitFlip.h"
 #include <iostream>
 
-virtual BitFlip::mutate(Individual *ind, int k) {
+
+//BitFlip::BitFlip() {}
+
+void BitFlip::mutate(Individual *ind, int k) {
     this->ind = ind;
     this->k = k;
     int length = ind->getLength();
@@ -14,9 +17,10 @@ virtual BitFlip::mutate(Individual *ind, int k) {
     ind->flipBit(k);
 }
 
-int elementChanged(Individual *ind, int k) {
+int BitFlip::elementChanged(Individual *ind, int k) {
     this->ind = ind;
-    this->k = k;
+    flipNo = k;
+    int length = ind->getLength();
 
     while(k<length) {
         k = k - length;

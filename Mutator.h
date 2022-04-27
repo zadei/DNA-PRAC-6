@@ -4,9 +4,12 @@
 #include <string>
 #include "Individual.h"
 
-class Mutator : public Individual {
+class Mutator {
+    public:
+    virtual void mutate(Individual *ind, int k) = 0;
     protected:
-    Mutator();
-    virtual void mutate(Individual ind, int k) = 0;
+    Individual *ind;
+    int k;
+    
 };
 #endif
