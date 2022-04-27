@@ -1,4 +1,5 @@
 #include "Individual.h"
+#include "BitFlip.h"
 #include <vector>
 #include <iostream>
 #include <string>
@@ -26,14 +27,17 @@ int main() {
     indPopulated->flipBit(1);
     std::cout << indPopulated->getBit(1) << "\n" << std::endl;
 
-   std::cout << "This should return the longest consecutive sequence of 1s" << std::endl;
-   std::cout << ind->getMaxOnes() << std::endl;
-   std::cout << indPopulated->getMaxOnes() << "\n" << std::endl;
+    std::cout << "This should return the longest consecutive sequence of 1s" << std::endl;
+    std::cout << ind->getMaxOnes() << std::endl;
+    std::cout << indPopulated->getMaxOnes() << "\n" << std::endl;
 
-   std::cout << "This should return the length of both binaries" << std::endl;
-   std::cout << ind->getLength() << std::endl;
-   std::cout << indPopulated->getLength() << std::endl;
+    std::cout << "This should return the length of both binaries" << std::endl;
+    std::cout << ind->getLength() << std::endl;
+    std::cout << indPopulated->getLength() << "\n" << std::endl;
  
+    std::cout << "This will test the BitFlip class" << std::endl;
+    
+    
 
     return 0;
 }
