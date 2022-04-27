@@ -4,6 +4,7 @@
 class BitFlip : public Mutator {
     public:
     BitFlip();
-    virtual mutate(Individual ind, int k);
+    virtual void mutate(Individual *ind, int k);
+    int elementChanged(Individual *ind, int k);
 };
 #endif

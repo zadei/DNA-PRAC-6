@@ -36,7 +36,7 @@ int main() {
     std::cout << indPopulated->getLength() << "\n" << std::endl;
  
     std::cout << "This will test the BitFlip class" << std::endl;
-    
+    std::cout <<  << std::endl;
     
 
     return 0;

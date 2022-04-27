@@ -1,5 +1,6 @@
-#include "BitFlip.h"
 #include "Individual.h"
+#include "BitFlip.h"
+#include <iostream>
 
 virtual BitFlip::mutate(Individual *ind, int k) {
     this->ind = ind;
@@ -12,3 +13,15 @@ virtual BitFlip::mutate(Individual *ind, int k) {
 
     ind->flipBit(k);
 }
+
+int elementChanged(Individual *ind, int k) {
+    this->ind = ind;
+    this->k = k;
+
+    while(k<length) {
+        k = k - length;
+    }
+
+    return k;
+}
+
