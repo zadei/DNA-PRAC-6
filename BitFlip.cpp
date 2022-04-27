@@ -1,4 +1,5 @@
 #include "BitFlip.h"
+#include "Individual.h"
 
 virtual BitFlip::mutate(Individual *ind, int k) {
     this->ind = ind;
