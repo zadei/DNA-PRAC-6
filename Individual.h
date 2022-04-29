@@ -16,8 +16,9 @@ public:
     void flipBit(int pos);
     int getMaxOnes();
     int getLength();
-protected:
-    // to be used in Mutator
+    void rotateVector(int amount);
+
+private:
     std::vector<std::string> binaryVector;
     int binaryLength;
     std::string binaryStr;
