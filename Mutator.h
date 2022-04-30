@@ -6,8 +6,6 @@
 
 class Mutator {
     public:
-    virtual void mutate(Individual *ind, int k) = 0;
-    protected:
-    
+    virtual Individual mutate(Individual *ind, int k) = 0;
 };
 #endif

@@ -9,11 +9,6 @@ Individual::Individual(int binaryLength) {
     for (int i = 0; i < binaryLength; i++) {
         binaryVector.push_back("0");
     }
-
-    // convert vector to string for use in getString()
-    for (int i = 0; i < binaryVector.size(); i++) {
-        binaryStr += binaryVector[i];
-    }
 }
 
 // converts string to binary vector
@@ -21,7 +16,7 @@ Individual::Individual(std::string binaryStr) {
     this->binaryStr = binaryStr;
     std::vector<char> strChar(binaryStr.begin(), binaryStr.end());
 
-    for (int i = 0; i < strChar.size(); i++) {
+    for (unsigned long int i = 0; i < strChar.size(); i++) {
         std::string temp(1, strChar[i]);
         binaryVector.push_back(temp);
     }
@@ -31,6 +26,12 @@ Individual::Individual(std::string binaryStr) {
 
 // outputs vector as a single string
 std::string Individual::getString() {
+    // everytime function is called, erases old string before it was modified
+    binaryStr.clear();
+    // constructs strings from bit vector
+    for (unsigned long int i = 0; i < binaryVector.size(); i++) {
+        binaryStr += binaryVector[i];
+    }
     return binaryStr;
 }
 
@@ -54,7 +55,7 @@ void Individual::flipBit(int pos) {
 int Individual::getMaxOnes() {
     int max = 0;
     int count = 0;
-    for (int i = 0; i < binaryVector.size(); i++) {
+    for (unsigned long int i = 0; i < binaryVector.size(); i++) {
         if (binaryVector.at(i) == "1") {
             count++;
         } else {
@@ -71,4 +72,15 @@ int Individual::getMaxOnes() {
 // returns length of binary vector
 int Individual::getLength() {
     return binaryLength;
+}
+
+
+// rotate vector by storing last element, destroying it then adding temp to the start
+void Individual::rotateVector(int amount) {
+    // rotate vector by amount
+    for (int i = 0; i < amount; i++) {
+        std::string temp = binaryVector.back();
+        binaryVector.erase(binaryVector.end() - 1);
+        binaryVector.insert(binaryVector.begin(), temp);
+    }
 }

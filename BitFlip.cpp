@@ -5,7 +5,7 @@
 
 //BitFlip::BitFlip() {}
 
-void BitFlip::mutate(Individual *ind, int k) {
+Individual BitFlip::mutate(Individual *ind, int k) {
     ind_ = ind;
     flipNo = k;
     int length = ind->getLength();
@@ -15,6 +15,8 @@ void BitFlip::mutate(Individual *ind, int k) {
     }
 
     ind->flipBit(flipNo);
+
+    return ind->getString();
 }
 
 int BitFlip::elementChanged(Individual *ind, int k) {
